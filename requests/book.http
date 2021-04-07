@@ -1,0 +1,103 @@
+### All Books
+GET {{host}}/api/v1/books
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+### All Books (Sorting)
+GET {{host}}/api/v1/books?sort=title
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+### All Books (Pagination)
+GET {{host}}/api/v1/books?page[size]=5&page[number]=2
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+
+### Single Book
+GET {{host}}/api/v1/books/1
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+### Single Book (Get Relationship with Authors)
+GET {{host}}/api/v1/books/1/relationships/authors
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+### Single Book (Get related Authors)
+GET {{host}}/api/v1/books/1/authors
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+
+### Single Book (Get included Authors)
+GET {{host}}/api/v1/books/1?include=authors
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+
+### Add Book
+POST {{host}}/api/v1/books
+Accept: {{json_type}}
+Authorization: {{access_token}}
+Content-Type: {{json_type}}
+
+{
+    "data": {
+        "type": "books",
+        "attributes": {
+            "title": "Book #X",
+            "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+            "publication_year": "2021"
+        }
+    }
+}
+
+### Update Book
+PATCH {{host}}/api/v1/books/11
+Accept: {{json_type}}
+Authorization: {{access_token}}
+Content-Type: {{json_type}}
+
+{
+    "data": {
+        "id": "1",
+        "type": "books",
+        "attributes": {
+            "title": "Book #07",
+            "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+            "publication_year": "2020"
+        }
+    }
+}
+
+### Update Book Relationships with Authors
+PATCH {{host}}/api/v1/books/5/relationships/authors
+Accept: {{json_type}}
+Authorization: {{access_token}}
+Content-Type: {{json_type}}
+
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "authors"
+        },
+        {
+            "id": "3",
+            "type": "authors"
+        }
+    ]
+}
+
+
+### Delete Book
+DELETE {{host}}/api/v1/books/14
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+
+
+
+
+

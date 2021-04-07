@@ -1,0 +1,63 @@
+### All Authors
+GET {{host}}/api/v1/authors
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+### All Authors (Sorting)
+GET {{host}}/api/v1/authors?sort=name
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+### All Authors (Pagination)
+GET {{host}}/api/v1/authors?page[size]=5&page[number]=2
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+
+### Single Author
+GET {{host}}/api/v1/authors/1
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+### Single Author (Get Relationship with Books)
+GET {{host}}/api/v1/authors/1/relationships/books
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
+
+### Add Author
+POST {{host}}/api/v1/authors
+Accept: {{json_type}}
+Authorization: {{access_token}}
+Content-Type: {{json_type}}
+
+{
+    "data": {
+        "type": "authors",
+        "attributes": {
+            "name": "Mat Smith"
+        }
+    }
+}
+
+### Update Author
+PATCH {{host}}/api/v1/authors/1
+Accept: {{json_type}}
+Authorization: {{access_token}}
+Content-Type: {{json_type}}
+
+{
+    "data": {
+        "id": "1",
+        "type": "authors",
+        "attributes": {
+            "name": "Michel Jakson 2"
+        }
+    }
+}
+
+### Delete Author
+DELETE {{host}}/api/v1/authors/13
+Accept: {{json_type}}
+Authorization: {{access_token}}
+
